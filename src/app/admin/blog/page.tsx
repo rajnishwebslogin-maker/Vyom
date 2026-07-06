@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { ArrowLeft, Edit, Trash2, Loader2 } from "lucide-react";
 import Link from "next/link";
 import { toast } from "sonner";
+import { useRouter } from "next/navigation";
 
 interface BlogPost {
   id: number;
@@ -24,6 +25,7 @@ interface BlogPost {
 }
 
 export default function AdminBlogPage() {
+  const router = useRouter();
   const [posts, setPosts] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
   const [editing, setEditing] = useState<BlogPost | null>(null);
