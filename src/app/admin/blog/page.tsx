@@ -97,9 +97,9 @@ export default function AdminBlogPage() {
     }
 
     setFormData(prev => ({
-      ...prev,
-      tags: formData.tags ? [...prev.tags] : [],
-    }));
+  ...prev,
+  tags: formData.tags ? [...(prev.tags || [])] : [],
+}));
 
     const isNew = !editing;
     const method = isNew ? "insert" : "update";
